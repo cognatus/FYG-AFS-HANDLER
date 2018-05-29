@@ -13,7 +13,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-
+//este middleware es para permitir peticiones del otro servidor
 app.use(function (req, res, next) {
 
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');

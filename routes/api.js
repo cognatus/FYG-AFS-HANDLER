@@ -20,6 +20,19 @@ sql.connect(config)
 router.route('/files_transfer')
   .post(function (req, res, next) {
     files.transfer(req, res, next, sql);
+  })
+  .put(function (req, res, next) {
+    files.delete(req, res, next, sql);
   });
+
+router.route('/files_mod')
+  .put(function (req, res, next) {
+    files.deleteAll(req, res, next, sql);
+  });
+
+/*router.route('/sube')
+  .post(function (req, res, next) {
+    files.sube(req, res, next, sql);
+  });*/
 
 module.exports = router;
